@@ -29,8 +29,11 @@ aws lambda update-function-code --function-name test-go-sns-event --zip-file fil
 
 ### 设置环境变量
 
+```bash
 - lambda 设置名为 `WEBHOOK_KEY` 的环境变量，其值为自己的飞书机器人 webhook url 的最后哈希串。
-- 设置飞书 webhook 为：`https://open.feishu.cn/open-apis/bot/v2/hook/xxxxx-xxxx-xxx-xxx-xxx`。需要设置一个值为 `xxxxx-xxxx-xxx-xxx-xxx` 的环境变量 `WEBHOOK_KEY`
+- 设置飞书 webhook 为：`https://open.feishu.cn/open-apis/bot/v2/hook/xxxxx-xxxx-xxx-xxx-xxx`。
+- `WEBHOOK_KEY` 需要设置一个值为 `xxxxx-xxxx-xxx-xxx-xxx` 的环境变量 
+```
 
 ### aws-cli 配置环境变量
 ```
