@@ -10,16 +10,16 @@
 - 需要给role配置 CheckAlarmDescribeAlarms 权限
 ```json
 {
-"Version": "2012-10-17",
-"Statement": [
-		{
-			"Action": [
-				"cloudwatch:DescribeAlarms*"
-			],
-"Effect": "Allow",
-"Resource": "*"
-		}
-	]
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "cloudwatch:DescribeAlarms*"
+            ],
+            "Effect": "Allow",
+            "Resource": "*"
+        }
+    ]
 }
 ```
 
