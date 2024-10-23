@@ -22,7 +22,7 @@ zip myFunction.zip bootstrap
 ### 上传和更新 Lambda 函数
 ```bash
 
-aws lambda create-function --function-name test-go-sns-event --runtime provided.al2023 --handler bootstrap --architectures arm64 --role arn:aws:iam::{accountId}:role/lambda-ex --zip-file fileb://myFunction.zip
+aws lambda create-function --function-name test-go-sns-event --profile sg  --runtime provided.al2023 --handler bootstrap --architectures arm64 --role arn:aws:iam::{accountId}:role/lambda-ex --zip-file fileb://myFunction.zip
 
 aws lambda update-function-code --function-name test-go-sns-event --zip-file fileb://myFunction.zip
 ```
@@ -31,3 +31,27 @@ aws lambda update-function-code --function-name test-go-sns-event --zip-file fil
 
 - lambda 设置名为 `WEBHOOK_KEY` 的环境变量，其值为自己的飞书机器人 webhook url 的最后哈希串。
 - 设置飞书 webhook 为：`https://open.feishu.cn/open-apis/bot/v2/hook/xxxxx-xxxx-xxx-xxx-xxx`。需要设置一个值为 `xxxxx-xxxx-xxx-xxx-xxx` 的环境变量 `WEBHOOK_KEY`
+
+### aws-cli 配置环境变量
+```
+vim ~/.aws/credentials
+
+[default]
+aws_access_key_id = xx
+aws_secret_access_key = xx
+[sg]
+aws_access_key_id = xx
+aws_secret_access_key = xx
+
+```
+
+```
+vim ~/.aws/config
+
+[default]
+region = us-east-1
+
+[profile sg]
+region = ap-southeast-1
+
+```
