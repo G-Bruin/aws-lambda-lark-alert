@@ -6,7 +6,22 @@
 - cloudwatch-continuous-alert
     - 由于 aws 指标监控的限制，仅仅变动的时候才会进行push，无法做到连续时间的持续监控，故进行升级
     - 使用 Lambda、Step Functions、Amazon EventBridge、Cloudwatch 指标进行飞书的告警监控
-    - [持续报警参考文档](https://aws.amazon.com/cn/blogs/china/use-aws-step-functions-to-implement-continuous-amazon-cloudwatch-alarms/) 
+    - [持续报警参考文档](https://aws.amazon.com/cn/blogs/china/use-aws-step-functions-to-implement-continuous-amazon-cloudwatch-alarms/)
+- 需要给role配置 CheckAlarmDescribeAlarms 权限
+```json
+{
+"Version": "2012-10-17",
+"Statement": [
+		{
+			"Action": [
+				"cloudwatch:DescribeAlarms*"
+			],
+"Effect": "Allow",
+"Resource": "*"
+		}
+	]
+}
+```
 
 ## 通用使用方法
 
