@@ -8,6 +8,9 @@
     - 使用 Lambda、Step Functions、Amazon EventBridge、Cloudwatch 指标进行飞书的告警监控
     - [持续报警参考文档](https://aws.amazon.com/cn/blogs/china/use-aws-step-functions-to-implement-continuous-amazon-cloudwatch-alarms/)
 - 需要给role配置 CheckAlarmDescribeAlarms 权限
+- 运行时配置
+  ![image](https://github.com/user-attachments/assets/f939b419-6d40-486b-b9bb-11c35730b200)
+
 ```json
 {
     "Version": "2012-10-17",
